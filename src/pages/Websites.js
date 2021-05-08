@@ -17,7 +17,7 @@ import right from "../img/right.svg";
 //Styling & Animations
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { websites, expandCircle, scaleDown, scrollDown } from "../animations";
+import { websites, scaleDown, scrollDown, grid } from "../animations";
 
 const Websites = () => {
   return (
@@ -33,7 +33,13 @@ const Websites = () => {
         </Link>
       </motion.div>
 
-      <motion.div className="grid">
+      <motion.div
+        variants={grid}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+        className="grid"
+      >
         <motion.div
           whileHover={{ scale: 1.1 }}
           variants={scaleDown}
@@ -71,9 +77,9 @@ const Websites = () => {
           <motion.img whileTap={{ scale: 1.2 }} src={right} alt="" />
         </Link>
       </div>
-      <div className="circles">
+      {/* <div className="circles">
         <BackgroundCircles />
-      </div>
+      </div> */}
     </StyledContainer>
   );
 };
@@ -135,6 +141,7 @@ const StyledContainer = styled(motion.div)`
     right: 0;
   }
   .logo {
+    overflow: hidden;
     height: 8vh;
     display: flex;
     align-items: center;

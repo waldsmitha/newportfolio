@@ -1,3 +1,40 @@
+//Global
+export const line = {
+  hidden: {
+    opacity: 0,
+  },
+  showOne: {
+    opacity: 1,
+    x: [0, 10, 0],
+    transition: {
+      duration: 1,
+      delay: 0.5,
+    },
+  },
+  showTwo: {
+    opacity: 1,
+    x: [0, 10, 0],
+    transition: {
+      duration: 1,
+      delay: 0.5,
+    },
+  },
+  showThree: {
+    opacity: 1,
+    x: [0, 10, 0],
+    transition: {
+      duration: 1,
+      delay: 0.5,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
 //Home Page
 export const home = {
   hidden: {
@@ -135,14 +172,12 @@ export const scaleDown = {
   show: {
     opacity: 1,
     scale: 1,
-
     transition: {
       duration: 1,
     },
   },
   exit: {
     opacity: 0,
-    scale: 1,
     transition: {
       duration: 0.25,
     },
@@ -164,6 +199,27 @@ export const scrollDown = {
     y: "-120%",
     transition: {
       duration: 0.25,
+    },
+  },
+};
+export const grid = {
+  hidden: {
+    y: "-120%",
+  },
+  show: {
+    opacity: 1,
+    scale: 1,
+    y: "0%",
+    transition: {
+      duration: 1,
+    },
+  },
+  exit: {
+    y: "-10%",
+    rotate: "45deg",
+    scale: 2,
+    transition: {
+      duration: 0.5,
     },
   },
 };

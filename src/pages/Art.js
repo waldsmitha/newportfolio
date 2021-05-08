@@ -104,11 +104,13 @@ const StyledContainer = styled(motion.div)`
     }
   }
   .nav-arrows {
+    position: fixed;
     width: 100%;
     display: flex;
     align-items: center;
     height: 10vh;
     /* background: gray; */
+    bottom: 10vh;
     padding-left: calc(2.5vw - 1rem);
   }
   .logo {

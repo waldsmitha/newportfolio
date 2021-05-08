@@ -145,7 +145,7 @@ const StyledDesign = styled(motion.div)`
   height: 100%;
 
   .circle {
-    cursor: pointer;
+    /* cursor: pointer; */
     margin: 0 auto;
     height: 90vw;
     width: 90vw;
@@ -170,9 +170,13 @@ const StyledDesign = styled(motion.div)`
     }
     .item {
       padding: 1rem 0;
+      transition: 0.5s;
       p {
         color: #f2f2f2;
         font-size: 1.8rem;
+      }
+      &:hover {
+        transform: scale(1.1);
       }
     }
   }
