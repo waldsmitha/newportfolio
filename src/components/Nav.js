@@ -11,13 +11,6 @@ const Nav = ({ currentPage, pageNum, navActive, setNavActive }) => {
     setNavActive(!navActive);
   };
 
-  // let navColor;
-  // if (pageNum === 3) {
-  //   navColor = "blue";
-  // } else {
-  //   navColor = "black";
-  // }
-
   const location = useLocation();
 
   const [navColor, setNavColor] = useState("gray content");
@@ -49,20 +42,19 @@ const Nav = ({ currentPage, pageNum, navActive, setNavActive }) => {
 };
 
 const StyledContainer = styled(motion.div)`
+  width: 100vw;
   position: fixed;
   bottom: 0;
-  left: 0;
-  width: 100%;
-  min-height: 12.5vh;
-  /* background: gray; */
+  width: 95vw;
+  left: 2.5%;
   .gray {
-    background: #393939;
+    /* background: #393939; */
   }
   .blue {
-    background: #5aa0c8;
+    /* background: #5aa0c8; */
   }
   .white {
-    background: #f2f2f2;
+    /* background: #f2f2f2; */
     h1 {
       color: #393939;
     }
@@ -74,26 +66,33 @@ const StyledContainer = styled(motion.div)`
     cursor: pointer;
     span {
       display: block;
-      padding: 0.2rem 3rem;
+      padding: 0.1rem 3rem;
       border-radius: 1rem;
-      margin: 1rem;
+      margin: 1rem 0;
       background: #cc800e;
     }
   }
   .content {
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 2px solid #cc800e;
-    /* margin: 0 1.25rem; */
   }
   h1 {
-    font-size: 3.6rem;
+    font-size: 2.4rem;
   }
   .page-num {
-    font-size: 7.2rem;
+    font-size: 3.6rem;
     span {
       color: #cc800e;
+      font-size: 4.8rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .burger {
+      display: none;
     }
   }
 `;

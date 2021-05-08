@@ -7,6 +7,7 @@ export const home = {
     opacity: 1,
     transition: {
       duration: 1,
+      delay: 0.5,
       when: "beforeChildren",
       staggerChildren: 0.25,
     },
@@ -23,7 +24,7 @@ export const home = {
 export const homeCircle = {
   hidden: {
     opacity: 0,
-    scale: 5,
+    scale: 2,
     y: "50%",
   },
   show: {
@@ -38,7 +39,7 @@ export const homeCircle = {
   },
   exit: {
     opacity: 0,
-    scale: 5,
+    scale: 2,
     y: "50%",
     transition: {
       duration: 0.5,
@@ -54,8 +55,6 @@ export const homeLogo = {
     y: "0%",
     transition: {
       duration: 1,
-      when: "beforeChildren",
-      staggerChildren: 0.25,
     },
   },
   exit: {
@@ -74,8 +73,6 @@ export const homeHand = {
     x: "0%",
     transition: {
       duration: 1,
-      when: "beforeChildren",
-      staggerChildren: 0.25,
     },
   },
   exit: {
@@ -111,13 +108,9 @@ export const staggerRight = {
 export const websites = {
   hidden: {
     opacity: 0,
-    scale: 5,
-    y: "50%",
   },
   show: {
     opacity: 1,
-    scale: 1,
-    y: "0%",
     transition: {
       duration: 1,
       when: "beforeChildren",
@@ -132,6 +125,50 @@ export const websites = {
   },
 };
 
+export const scaleDown = {
+  hidden: {
+    scale: 2,
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    scale: 1,
+
+    transition: {
+      duration: 1,
+    },
+  },
+  exit: {
+    opacity: 0,
+    scale: 1,
+    transition: {
+      duration: 0.25,
+    },
+  },
+  hover: {
+    scale: 1.1,
+  },
+};
+export const scrollDown = {
+  hidden: {
+    y: "-120%",
+  },
+  show: {
+    opacity: 1,
+    scale: 1,
+    y: "0%",
+    transition: {
+      duration: 1,
+    },
+  },
+  exit: {
+    y: "-120%",
+    transition: {
+      duration: 0.25,
+    },
+  },
+};
+
 export const expandCircle = {
   hidden: {
     opacity: 0,
@@ -142,8 +179,6 @@ export const expandCircle = {
     y: "0%",
     transition: {
       duration: 1,
-      when: "beforeChildren",
-      staggerChildren: 0.25,
     },
   },
   exit: {
@@ -159,13 +194,14 @@ export const expandCircle = {
 export const art = {
   hidden: {
     opacity: 0,
-    x: "50%",
+    // x: "50%",
   },
   show: {
     opacity: 1,
     x: "0%",
     transition: {
       duration: 1,
+      delay: 0.5,
       when: "beforeChildren",
       staggerChildren: 0.25,
     },
@@ -187,7 +223,7 @@ export const staggerImage = {
     opacity: 1,
     y: "0%",
     transition: {
-      duration: 0.5,
+      duration: 0.4,
     },
   },
   exit: {
@@ -210,6 +246,7 @@ export const contact = {
     x: "0%",
     transition: {
       duration: 1,
+      delay: 0.5,
       when: "beforeChildren",
       staggerChildren: 0.25,
     },

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 //Images
 import hand from "../img/hand.svg";
 import name from "../img/name.svg";
+import lines from "../img/lines.svg";
 
 //Styling & Animations
 import styled from "styled-components";
@@ -39,17 +40,8 @@ const Home = () => {
           <motion.li variants={staggerRight}>Artist</motion.li>
         </ul>
       </motion.div>
+      <img className="lines" src={lines} alt="" />
       <StyledDesign>
-        <motion.img
-          className="logo"
-          exit="exit"
-          animate="show"
-          initial="hidden"
-          variants={homeHand}
-          id="hand"
-          src={hand}
-          alt=""
-        />
         <Link style={{ textDecoration: "none" }} to="/websites">
           <motion.div
             className="circle"
@@ -58,7 +50,25 @@ const Home = () => {
             initial="hidden"
             variants={homeCircle}
           >
-            <h1>Portfolio</h1>
+            <motion.img
+              className="logo"
+              exit="exit"
+              animate="show"
+              initial="hidden"
+              variants={homeHand}
+              id="hand"
+              src={hand}
+              alt=""
+            />
+            <motion.h1
+              transition={{
+                repeat: Infinity,
+                duration: 0.75,
+                ease: "easeInOut",
+              }}
+            >
+              Portfolio
+            </motion.h1>
           </motion.div>
         </Link>
       </StyledDesign>
@@ -67,13 +77,16 @@ const Home = () => {
 };
 
 const StyledContainer = styled(motion.div)`
-  padding: 1.25rem;
-  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 85vh;
+  justify-content: space-between;
+  height: 100vh;
+  padding-bottom: 10vh;
   background: #393939;
+  width: 100vw;
+  overflow: hidden;
+
   ul {
     display: flex;
     width: 100%;
@@ -90,18 +103,30 @@ const StyledContainer = styled(motion.div)`
       width: 100%;
     }
   }
+  .lines {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10vh 0;
+    .lines {
+      display: block;
+      height: 80%;
+    }
+  }
 `;
 
 const StyledDesign = styled(motion.div)`
-  width: 100%;
-  height: 65vh;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  position: relative;
-  padding-bottom: 2rem;
+  align-items: center;
+  /* position: relative; */
+  /* background: blue; */
+  height: 100%;
 
   .circle {
+    position: relative;
     cursor: pointer;
     margin: 0 auto;
     height: 90vw;
@@ -117,9 +142,11 @@ const StyledDesign = styled(motion.div)`
   }
   #hand {
     position: absolute;
-    top: -10%;
-    right: 0;
+    top: -80%;
+    left: 50%;
     pointer-events: none;
+    z-index: 10;
+    /* background: white; */
   }
   h1 {
     color: #cc800e;

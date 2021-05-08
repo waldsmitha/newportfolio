@@ -1,13 +1,14 @@
 import React from "react";
 
 //Routing
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //Images
 import name from "../img/name-or.svg";
 import left from "../img/left-bl.svg";
 import instagram from "../img/instagram.svg";
 import email from "../img/email.svg";
+import lines from "../img/lines.svg";
 
 //Styling & Animations
 import styled from "styled-components";
@@ -32,6 +33,7 @@ const Contact = () => {
           <li>Artist</li>
         </ul>
       </div>
+      <img className="lines" src={lines} alt="" />
       <StyledDesign>
         <Link style={{ textDecoration: "none" }} to="/websites">
           <div className="circle">
@@ -55,16 +57,18 @@ const Contact = () => {
 };
 
 const StyledContainer = styled(motion.div)`
-  padding: 1.25rem;
-  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   height: 100vh;
-  padding-bottom: 12.5vh;
+  padding-bottom: 10vh;
+  background: #393939;
+  width: 100vw;
+  overflow: hidden;
   background: #f2f2f2;
   color: #393939;
+
   ul {
     display: flex;
     width: 100%;
@@ -81,14 +85,42 @@ const StyledContainer = styled(motion.div)`
       width: 100%;
     }
   }
+  .lines {
+    display: none;
+  }
+  .nav-arrows {
+    position: fixed;
+    bottom: 10vh;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    /* background: gray; */
+
+    img {
+      margin: 0 1rem;
+      /* background: blue; */
+    }
+  }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10vh 0;
+    .lines {
+      display: block;
+      height: 80%;
+    }
+  }
 `;
 
 const StyledDesign = styled(motion.div)`
-  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
-  padding-bottom: 2rem;
+  /* background: gray; */
+  height: 100%;
 
   .circle {
     cursor: pointer;
@@ -101,7 +133,6 @@ const StyledDesign = styled(motion.div)`
     border: 2.5rem #cc800e solid;
     border-radius: 50%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -117,9 +148,6 @@ const StyledDesign = styled(motion.div)`
   h1 {
     color: #f2f2f2;
     font-size: 4.8rem;
-  }
-  .nav-arrows {
-    padding-bottom: 15vh;
   }
 `;
 

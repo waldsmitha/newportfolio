@@ -7,6 +7,7 @@ import Contact from "./pages/Contact";
 
 //Components
 import Nav from "./components/Nav";
+import NavDesktop from "./components/NavDesktop";
 import NavMobileMenu from "./components/NavMobileMenu";
 
 //styling
@@ -57,14 +58,20 @@ function App() {
             <Contact />
           </Route>
         </Switch>
-        <Nav
-          currentPage={currentPage}
-          pageNum={pageNum}
-          navActive={navActive}
-          setNavActive={setNavActive}
-        />
       </AnimatePresence>
-
+      <NavDesktop
+        currentPage={currentPage}
+        pages={pages}
+        setPages={setPages}
+        navActive={navActive}
+        setNavActive={setNavActive}
+      />
+      <Nav
+        currentPage={currentPage}
+        pageNum={pageNum}
+        navActive={navActive}
+        setNavActive={setNavActive}
+      />
       <NavMobileMenu
         currentPage={currentPage}
         pages={pages}
@@ -76,6 +83,8 @@ function App() {
   );
 }
 
-const StyledContainer = styled(motion.div)``;
+const StyledContainer = styled(motion.div)`
+  position: relative;
+`;
 
 export default App;

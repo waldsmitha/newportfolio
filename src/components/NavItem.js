@@ -6,20 +6,19 @@ const NavItem = ({ item, navActive, setNavActive, index }) => {
   const [active, setActive] = useState(false);
   const location = useLocation();
   let pathname = location.pathname;
-  let newPages = ["/", "/websites", "art", "contact"];
+  let newPages = ["/", "/websites", "/art", "/contact"];
 
   const toggleNav = () => {
     setNavActive(!navActive);
   };
 
   useEffect(() => {
-    if (pathname == item) {
+    if (pathname === newPages[index]) {
       setActive(true);
     } else {
       setActive(false);
     }
   }, [location]);
-  console.log(index);
 
   const pageIndex = () => {
     switch (index) {
@@ -39,11 +38,6 @@ const NavItem = ({ item, navActive, setNavActive, index }) => {
         return "/";
     }
   };
-  //   useEffect(() => {
-  //     const index = active.indexOf(true);
-  //     setRef(refs[index]);
-  //     scrollToComponent();
-  //   }, [active]);
 
   return (
     <div>

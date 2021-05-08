@@ -1,8 +1,3 @@
-import React, { useState } from "react";
-
-//Router
-import { Link } from "react-router-dom";
-
 //Components
 import NavItem from "./NavItem";
 
@@ -41,55 +36,62 @@ const NavMobileMenu = ({ pages, navActive, setNavActive }) => {
 };
 
 const StyledContainer = styled(motion.div)`
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+  z-index: 10;
+
   .nav {
     clip-path: circle(0% at 0% 75%);
     background: #5aa0c8;
     position: fixed;
     top: 0%;
     left: 0;
-    bottom: 0;
-    right: 0;
-    transition: 0.5s;
-    padding-left: 5rem;
+    height: 100vh;
+    width: 100vw;
+    transition: 0.75s;
+    /* padding-left: 5rem; */
   }
 
   ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
     height: 100%;
+    width: 100%;
     list-style-type: none;
 
     li {
       font-size: 3rem;
       margin: 2rem 0;
       cursor: pointer;
+      width: fit-content;
     }
   }
   .active {
     color: #cc800e;
   }
   .reveal-nav-menu {
-    clip-path: circle(100% at 0% 50%);
+    clip-path: circle(120% at 0% 50%);
   }
 
   .close-btn {
+    z-index: 10;
     position: fixed;
-    bottom: 0;
     left: 0;
-    right: 0;
-    top: 25%;
+    bottom: 0;
     background: white;
     color: #5aa0c8;
-    clip-path: circle(40% at 0% 100%);
-    display: flex;
-    align-items: flex-end;
+    clip-path: circle(100% at 0% 100%);
     cursor: pointer;
-    transition: 0.25s;
+    transition: 0.5s;
+    height: 20vh;
+    width: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     h1 {
-      padding: 5rem;
       font-size: 3rem;
       pointer-events: none;
     }
