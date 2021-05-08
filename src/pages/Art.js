@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 //Images
 import name from "../img/name-sm-or.svg";
-import hero from "../img/hero.jpg";
+import hero from "../img/art/hero.jpg";
 import left from "../img/left.svg";
 import right from "../img/right.svg";
 import bliss from "../img/art/bliss.JPG";
@@ -99,12 +99,12 @@ const StyledContainer = styled(motion.div)`
     padding-left: calc(2.5vw - 1rem);
   }
   .logo {
-    height: 10vh;
+    height: 8vh;
     display: flex;
     align-items: center;
     position: fixed;
     top: 0;
-    left: 0;
+    left: calc(2.5vw);
   }
 `;
 

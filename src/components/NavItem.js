@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import styled from "styled-components";
 
 const NavItem = ({ item, navActive, setNavActive, index }) => {
   const [active, setActive] = useState(false);
@@ -47,10 +49,21 @@ const NavItem = ({ item, navActive, setNavActive, index }) => {
         key={item}
         onClick={toggleNav}
       >
-        <li className={active ? "active" : " "}>{item}</li>
+        <StyledLi className={active ? "active" : " "}>{item}</StyledLi>
       </Link>
     </div>
   );
 };
 
+const StyledLi = styled(motion.li)`
+  transition: 0.3s;
+  &:hover {
+    color: #cc800e;
+    transform: scale(1.1);
+  }
+
+  .active {
+    color: #cc800e;
+  }
+`;
 export default NavItem;

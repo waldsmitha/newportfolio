@@ -145,9 +145,6 @@ export const scaleDown = {
       duration: 0.25,
     },
   },
-  hover: {
-    scale: 1.1,
-  },
 };
 export const scrollDown = {
   hidden: {
@@ -163,27 +160,6 @@ export const scrollDown = {
   },
   exit: {
     y: "-120%",
-    transition: {
-      duration: 0.25,
-    },
-  },
-};
-
-export const expandCircle = {
-  hidden: {
-    opacity: 0,
-  },
-  show: {
-    opacity: 1,
-    scale: 1,
-    y: "0%",
-    transition: {
-      duration: 1,
-    },
-  },
-  exit: {
-    x: "100%",
-    y: "-100%",
     transition: {
       duration: 0.25,
     },
@@ -239,11 +215,9 @@ export const staggerImage = {
 export const contact = {
   hidden: {
     opacity: 0,
-    x: "50%",
   },
   show: {
     opacity: 1,
-    x: "0%",
     transition: {
       duration: 1,
       delay: 0.5,

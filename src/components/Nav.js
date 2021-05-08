@@ -73,14 +73,14 @@ const StyledContainer = styled(motion.div)`
     }
   }
   .content {
-    height: 10vh;
+    height: 8vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 2px solid #cc800e;
   }
   h1 {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
   .page-num {
     font-size: 3.6rem;

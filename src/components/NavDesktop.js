@@ -60,6 +60,9 @@ const StyledContainer = styled(motion.div)`
     li {
       color: #393939;
     }
+    .active {
+      color: #cc800e;
+    }
   }
 
   .nav {
@@ -71,9 +74,12 @@ const StyledContainer = styled(motion.div)`
     }
 
     li {
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       padding-left: 4rem;
     }
+  }
+  .active {
+    color: #cc800e;
   }
 
   @media screen and (max-width: 768px) {

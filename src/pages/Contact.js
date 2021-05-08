@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 //Routing
 import { Link } from "react-router-dom";
@@ -16,6 +16,11 @@ import { motion } from "framer-motion";
 import { contact } from "../animations";
 
 const Contact = () => {
+  const [toggle, setToggle] = useState(false);
+  const toggleContact = () => {
+    setToggle(!toggle);
+  };
+
   return (
     <StyledContainer
       exit="exit"
@@ -23,7 +28,7 @@ const Contact = () => {
       initial="hidden"
       variants={contact}
     >
-      <div className="logo">
+      <motion.div className="logo">
         <Link to="/">
           <img src={name} alt="" />
         </Link>
@@ -32,20 +37,36 @@ const Contact = () => {
           <li>Developer</li>
           <li>Artist</li>
         </ul>
-      </div>
-      <img className="lines" src={lines} alt="" />
+      </motion.div>
+      <motion.img
+        onClick={toggleContact}
+        className="lines"
+        src={lines}
+        alt=""
+      />
       <StyledDesign>
-        <Link style={{ textDecoration: "none" }} to="/websites">
-          <div className="circle">
-            <div className="contact">
-              <h1>contact</h1>
-              <div className="social-media">
-                <img src={instagram} alt="" />
-                <img src={email} alt="" />
-              </div>
+        <motion.div className="circle">
+          <div className="contact">
+            <h1>contact</h1>
+            <div className="social-media">
+              <a
+                href="https://www.instagram.com/austinwaldsmith/"
+                target="_blank"
+              >
+                <div className="item">
+                  <img src={instagram} alt="" />
+                  <p>instagram: @austinwaldsmith</p>
+                </div>
+              </a>
+              <a href="mailto:austin.waldsmith@gmail.com</div>">
+                <div className="item">
+                  <img src={email} alt="" />
+                  <p>email: austin.waldsmith@gmail.com</p>
+                </div>
+              </a>
             </div>
           </div>
-        </Link>
+        </motion.div>
       </StyledDesign>
       <div className="nav-arrows">
         <Link to="/art">
@@ -62,6 +83,7 @@ const StyledContainer = styled(motion.div)`
   align-items: center;
   justify-content: space-between;
   height: 100vh;
+  padding-top: 1rem;
   padding-bottom: 10vh;
   background: #393939;
   width: 100vw;
@@ -91,7 +113,7 @@ const StyledContainer = styled(motion.div)`
   .nav-arrows {
     position: fixed;
     bottom: 10vh;
-    left: 0;
+    left: calc(2.5vw - 2rem);
     width: 100%;
     display: flex;
     align-items: center;
@@ -131,17 +153,27 @@ const StyledDesign = styled(motion.div)`
     max-height: 30rem;
     background: #5aa0c8;
     border: 2.5rem #cc800e solid;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .contact {
+    a {
+      text-decoration: none;
+    }
     .social-media {
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      align-items: center;
+    }
+    .item {
+      padding: 1rem 0;
+      p {
+        color: #f2f2f2;
+        font-size: 1.8rem;
+      }
     }
   }
 

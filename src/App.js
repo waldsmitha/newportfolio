@@ -45,7 +45,7 @@ function App() {
       <GlobalStyles></GlobalStyles>
       <AnimatePresence>
         <Switch location={location} key={location.pathname}>
-          <Route exact path={"/"}>
+          <Route exact path="/">
             <Home />
           </Route>
           <Route path="/websites">

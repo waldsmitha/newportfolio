@@ -37,7 +37,8 @@ const Websites = () => {
       >
         <CornerCircle />
       </motion.div> */}
-      <motion.div className="logo" variants={scrollDown}>
+
+      <motion.div className="logo">
         <Link to="/">
           <img src={name} alt="" />
         </Link>
@@ -49,10 +50,12 @@ const Websites = () => {
           variants={scaleDown}
           className="item"
         >
-          <motion.img whileHover={{ y: -10 }} src={sage} alt="" />
-          <div className="title">
-            <h1>Sage</h1>
-          </div>
+          <a href="https://fervent-sammet-4ebc43.netlify.app/" target="_blank">
+            <motion.img whileHover={{ y: -10 }} src={sage} alt="" />
+            <div className="title">
+              <h1>Sage</h1>
+            </div>
+          </a>
         </motion.div>
         <motion.div variants={scaleDown} className="item">
           <motion.img whileHover={{ y: -10 }} src={ignite} alt="" />
@@ -79,7 +82,9 @@ const Websites = () => {
           <motion.img whileTap={{ scale: 1.2 }} src={right} alt="" />
         </Link>
       </div>
-      <div className="circles">{/* <BackgroundCircles /> */}</div>
+      <div className="circles">
+        <BackgroundCircles />
+      </div>
     </StyledContainer>
   );
 };
@@ -94,7 +99,6 @@ const StyledContainer = styled(motion.div)`
   max-width: 100rem;
   margin: 0 auto;
   justify-content: center;
-  /* align-items: center; */
   position: relative;
 
   .grid {
@@ -108,6 +112,12 @@ const StyledContainer = styled(motion.div)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    a {
+      text-decoration: none;
+      color: #f2f2f2;
+    }
+
     .title {
       padding-top: 1rem;
       text-align: center;
@@ -129,10 +139,6 @@ const StyledContainer = styled(motion.div)`
   .circles {
     position: absolute;
     z-index: -10;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
   }
   .corner-circle {
     position: absolute;
@@ -140,18 +146,13 @@ const StyledContainer = styled(motion.div)`
     right: 0;
   }
   .logo {
-    height: 10vh;
+    height: 8vh;
     display: flex;
     align-items: center;
     position: fixed;
     top: 0;
-    left: 0;
+    left: calc(2.5vw);
   }
-  /* @media screen and (min-width: 768px) {
-    .logo {
-      display: none;
-    }
-  } */
 `;
 
 export default Websites;

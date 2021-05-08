@@ -82,6 +82,7 @@ const StyledContainer = styled(motion.div)`
   align-items: center;
   justify-content: space-between;
   height: 100vh;
+  padding-top: 1rem;
   padding-bottom: 10vh;
   background: #393939;
   width: 100vw;
