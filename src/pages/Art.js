@@ -17,7 +17,7 @@ import crowned from "../img/art/crowned.JPG";
 import fates from "../img/art/fates.jpg";
 import rider from "../img/art/hand-rider.JPG";
 import jimi from "../img/art/jimi.jpg";
-import fatesVideo from "../img/art/fates-video.MP4";
+import fatesVideo from "../img/art/Fates-Video-1.m4v";
 
 //Styling & Animations
 import styled from "styled-components";
