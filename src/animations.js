@@ -290,3 +290,23 @@ export const contact = {
     },
   },
 };
+
+export const scrollRight = {
+  hidden: {
+    x: "120%",
+  },
+  show: {
+    opacity: 1,
+    scale: 1,
+    x: "0%",
+    transition: {
+      duration: 1,
+    },
+  },
+  exit: {
+    x: "120%",
+    transition: {
+      duration: 0.5,
+    },
+  },
+};

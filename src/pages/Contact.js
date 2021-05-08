@@ -13,7 +13,7 @@ import lines from "../img/lines.svg";
 //Styling & Animations
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { contact, homeLogo, staggerRight } from "../animations";
+import { contact, homeLogo, staggerRight, scrollRight } from "../animations";
 
 const Contact = () => {
   const [toggle, setToggle] = useState(false);
@@ -45,7 +45,7 @@ const Contact = () => {
         alt=""
       />
       <StyledDesign>
-        <motion.div className="circle">
+        <motion.div variants={scrollRight} className="circle">
           <div className="contact">
             <h1>contact</h1>
             <div className="social-media">
