@@ -78,26 +78,23 @@ const StyledContainer = styled(motion.div)`
   align-items: center;
   background: #5aa0c8;
   .max-width {
-    max-width: 100rem;
+    max-width: 130rem;
   }
 
-  /* .grid {
+  .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-items: center;
     align-items: flex-start;
     grid-column-gap: 2rem;
-  } */
+  }
 
-  .grid {
+  /* .grid {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-  }
+  } */
   .item {
-    flex-grow: 1;
-    height: 30vh;
-    max-width: 33rem;
     margin: 1rem;
     img,
     video {
