@@ -12,7 +12,7 @@ import hero from "../img/art/hero.jpg";
 import left from "../img/left.svg";
 import right from "../img/right.svg";
 import bliss from "../img/art/bliss.JPG";
-import corgi from "../img/art/corgi.PNG";
+// import corgi from "../img/art/corgi.PNG";
 import crowned from "../img/art/crowned.JPG";
 import fates from "../img/art/fates.jpg";
 import rider from "../img/art/hand-rider.JPG";
@@ -25,7 +25,7 @@ import { motion } from "framer-motion";
 import { art, staggerImage, scrollDown } from "../animations";
 
 const Art = () => {
-  const images = [hero, bliss, corgi, crowned, fates, rider, jimi];
+  const images = [hero, bliss, crowned, fates, rider, jimi];
 
   const imageList = images.map((item) => (
     <motion.div variants={staggerImage} className="item" key={item}>
