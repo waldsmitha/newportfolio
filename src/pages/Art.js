@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 //Routing
 import { Link } from "react-router-dom";
+
+//Components
+import LargeImage from "../components/LargeImage";
 
 //Images
 import name from "../img/name-sm-or.svg";
@@ -14,42 +17,42 @@ import crowned from "../img/art/crowned.JPG";
 import fates from "../img/art/fates.jpg";
 import rider from "../img/art/hand-rider.JPG";
 import jimi from "../img/art/jimi.jpg";
+import fatesVideo from "../img/art/fates-video.MP4";
 
 //Styling & Animations
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { art, staggerImage } from "../animations";
+import { art, staggerImage, scrollDown } from "../animations";
 
 const Art = () => {
+  const images = [hero, bliss, corgi, crowned, fates, rider, jimi];
+
+  const imageList = images.map((item) => (
+    <motion.div variants={staggerImage} className="item" key={item}>
+      <img src={item} alt="" />
+    </motion.div>
+  ));
+
   return (
     <StyledContainer exit="exit" animate="show" initial="hidden" variants={art}>
-      <div className="logo">
+      <motion.div variants={scrollDown} className="logo">
         <Link to="/">
           <img src={name} alt="" />
         </Link>
-      </div>
+      </motion.div>
       <div className="max-width">
         <div className="grid">
+          {imageList}
           <motion.div variants={staggerImage} className="item">
-            <img src={hero} alt="" />
-          </motion.div>
-          <motion.div variants={staggerImage} className="item">
-            <img src={bliss} alt="" />
-          </motion.div>
-          <motion.div variants={staggerImage} className="item">
-            <img src={corgi} alt="" />
-          </motion.div>
-          <motion.div variants={staggerImage} className="item">
-            <img src={crowned} alt="" />
-          </motion.div>
-          <motion.div variants={staggerImage} className="item">
-            <img src={fates} alt="" />
-          </motion.div>
-          <motion.div variants={staggerImage} className="item">
-            <img src={rider} alt="" />
-          </motion.div>
-          <motion.div variants={staggerImage} className="item">
-            <img src={jimi} alt="" />
+            <video
+              playsInline
+              autoPlay
+              loop
+              muted
+              src={fatesVideo}
+              type="video/mp4"
+              alt=""
+            />
           </motion.div>
         </div>
       </div>
@@ -77,16 +80,29 @@ const StyledContainer = styled(motion.div)`
   .max-width {
     max-width: 100rem;
   }
-  .grid {
+
+  /* .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-items: center;
     align-items: flex-start;
     grid-column-gap: 2rem;
+  } */
+
+  .grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   .item {
-    img {
+    flex-grow: 1;
+    height: 30vh;
+    max-width: 33rem;
+    margin: 1rem;
+    img,
+    video {
       width: 100%;
+      height: 100%;
       object-fit: cover;
     }
   }
@@ -105,6 +121,9 @@ const StyledContainer = styled(motion.div)`
     position: fixed;
     top: 0;
     left: calc(2.5vw);
+    img {
+      transform: scale(0.9);
+    }
   }
 `;
 

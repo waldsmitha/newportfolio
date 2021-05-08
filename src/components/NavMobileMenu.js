@@ -50,7 +50,7 @@ const StyledContainer = styled(motion.div)`
     height: 100vh;
     width: 100vw;
     transition: 0.75s;
-    /* padding-left: 5rem; */
+    padding-left: 2rem;
   }
 
   ul {
@@ -88,8 +88,8 @@ const StyledContainer = styled(motion.div)`
     height: 20vh;
     width: 20vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding-left: 2rem;
 
     h1 {
       font-size: 3rem;

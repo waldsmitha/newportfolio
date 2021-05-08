@@ -55,6 +55,8 @@ export const homeLogo = {
     y: "0%",
     transition: {
       duration: 1,
+      when: "beforeChildren",
+      staggerChildren: 0.25,
     },
   },
   exit: {
@@ -194,10 +196,12 @@ export const staggerImage = {
   hidden: {
     opacity: 0,
     y: "50%",
+    skew: 5,
   },
   show: {
     opacity: 1,
     y: "0%",
+    skew: 0,
     transition: {
       duration: 0.4,
     },
@@ -221,8 +225,6 @@ export const contact = {
     transition: {
       duration: 1,
       delay: 0.5,
-      when: "beforeChildren",
-      staggerChildren: 0.25,
     },
   },
   exit: {

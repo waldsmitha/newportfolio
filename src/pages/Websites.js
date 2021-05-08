@@ -4,7 +4,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 //Components
-import CornerCircle from "../components/CornerCircle";
 import BackgroundCircles from "../components/BackgroundCircles";
 
 //Images
@@ -28,17 +27,7 @@ const Websites = () => {
       initial="hidden"
       variants={websites}
     >
-      {/* <motion.div
-        className="corner-circle"
-        exit="exit"
-        animate="show"
-        initial="hidden"
-        variants={expandCircle}
-      >
-        <CornerCircle />
-      </motion.div> */}
-
-      <motion.div className="logo">
+      <motion.div variants={scrollDown} className="logo">
         <Link to="/">
           <img src={name} alt="" />
         </Link>
@@ -152,6 +141,9 @@ const StyledContainer = styled(motion.div)`
     position: fixed;
     top: 0;
     left: calc(2.5vw);
+    img {
+      transform: scale(0.9);
+    }
   }
 `;
 

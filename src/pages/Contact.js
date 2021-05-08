@@ -13,7 +13,7 @@ import lines from "../img/lines.svg";
 //Styling & Animations
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { contact } from "../animations";
+import { contact, homeLogo, staggerRight } from "../animations";
 
 const Contact = () => {
   const [toggle, setToggle] = useState(false);
@@ -28,14 +28,14 @@ const Contact = () => {
       initial="hidden"
       variants={contact}
     >
-      <motion.div className="logo">
+      <motion.div variants={homeLogo} className="logo">
         <Link to="/">
           <img src={name} alt="" />
         </Link>
         <ul>
-          <li>Designer</li>
-          <li>Developer</li>
-          <li>Artist</li>
+          <motion.li variants={staggerRight}>Designer</motion.li>
+          <motion.li variants={staggerRight}>Developer</motion.li>
+          <motion.li variants={staggerRight}>Artist</motion.li>
         </ul>
       </motion.div>
       <motion.img
