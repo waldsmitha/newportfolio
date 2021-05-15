@@ -10,7 +10,7 @@ import BackgroundCircles from "../components/BackgroundCircles";
 import name from "../img/name-sm-bl.svg";
 import sage from "../img/sage.svg";
 import heart from "../img/heart.svg";
-import ignite from "../img/ignite.svg";
+import camera from "../img/camera.svg";
 import left from "../img/left.svg";
 import right from "../img/right.svg";
 
@@ -45,28 +45,46 @@ const Websites = () => {
           variants={scaleDown}
           className="item"
         >
-          <a href="https://fervent-sammet-4ebc43.netlify.app/" target="_blank">
+          <a
+            href="https://fervent-sammet-4ebc43.netlify.app/"
+            rel="noreferrer"
+            target="_blank"
+          >
             <motion.img whileHover={{ y: -10 }} src={sage} alt="" />
             <div className="title">
               <h1>Sage</h1>
             </div>
           </a>
         </motion.div>
-        <motion.div variants={scaleDown} className="item">
-          <motion.img whileHover={{ y: -10 }} src={ignite} alt="" />
-          <div className="title">
-            <h1>Ignite</h1>
-          </div>
-        </motion.div>
         <motion.div
           whileHover={{ scale: 1.1 }}
           variants={scaleDown}
           className="item"
         >
-          <motion.img whileHover={{ y: -10 }} src={heart} alt="" />
-          <div className="title">
-            <h1>Heart Nouveau</h1>
-          </div>
+          <a
+            href="https://waldsmitha.github.io/heart/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <motion.img whileHover={{ y: -10 }} src={heart} alt="" />
+            <div className="title">
+              <h1>Heart Nouveau</h1>
+            </div>
+          </a>
+        </motion.div>
+        <motion.div variants={scaleDown} className="item">
+          <a
+            href="https://focused-einstein-501c8e.netlify.app/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <motion.img whileHover={{ y: -10 }} src={camera} alt="" />
+            <div className="title capture">
+              <h1>Capture</h1>
+              <h2>From Lesson</h2>
+              <h2>developedbyed.com</h2>
+            </div>
+          </a>
         </motion.div>
       </motion.div>
       <div className="nav-arrows">
@@ -116,6 +134,11 @@ const StyledContainer = styled(motion.div)`
     .title {
       padding-top: 1rem;
       text-align: center;
+    }
+    .capture {
+      h1 {
+        font-family: "Lobster", cursive;
+      }
     }
   }
   .nav-arrows {
