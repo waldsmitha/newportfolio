@@ -16,7 +16,6 @@ import {
   homeHand,
   homeLogo,
   staggerRight,
-  line,
 } from "../animations";
 
 const Home = () => {

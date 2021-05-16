@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 //Routing
 import { Link } from "react-router-dom";
 
-//Components
-import LargeImage from "../components/LargeImage";
 
 //Images
 import name from "../img/name-sm-or.svg";
@@ -18,6 +16,9 @@ import fates from "../img/art/fates.jpg";
 import rider from "../img/art/hand-rider.JPG";
 import jimi from "../img/art/jimi.jpg";
 import fatesVideo from "../img/art/Fates-Video-1.m4v";
+import llama from '../img/art/llama.svg'
+import swan from '../img/art/swan.svg'
+import wolf from '../img/art/wolf.svg'
 
 //Styling & Animations
 import styled from "styled-components";
@@ -25,7 +26,7 @@ import { motion } from "framer-motion";
 import { art, staggerImage, scrollDown } from "../animations";
 
 const Art = () => {
-  const images = [hero, bliss, crowned, fates, rider, jimi];
+  const images = [hero, bliss, crowned, fates, rider, llama, swan, wolf, jimi];
 
   const imageList = images.map((item) => (
     <motion.div variants={staggerImage} className="item" key={item}>
@@ -73,7 +74,7 @@ const StyledContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding: 10vh 0;
+  padding: 10vh 2.5%;
   /* justify-content: space-between; */
   align-items: center;
   background: #5aa0c8;
@@ -87,6 +88,7 @@ const StyledContainer = styled(motion.div)`
     justify-items: center;
     align-items: flex-start;
     grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
   }
 
   /* .grid {
@@ -95,12 +97,14 @@ const StyledContainer = styled(motion.div)`
     flex-wrap: wrap;
   } */
   .item {
-    margin: 1rem;
+    height: 100%;
+    width: 100%;
     img,
     video {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 1rem;
     }
   }
   .nav-arrows {
@@ -121,7 +125,7 @@ const StyledContainer = styled(motion.div)`
     top: 0;
     left: calc(2.5vw);
     img {
-      transform: scale(0.9);
+      transform: scale(0.8);
     }
   }
 `;

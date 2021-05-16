@@ -10,9 +10,6 @@ import NavItem from "./NavItem";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-//Images
-import name from "../img/name-sm-bl.svg";
-
 const NavDesktop = ({ pages, navActive, setNavActive }) => {
   const location = useLocation();
   const [navColor, setNavColor] = useState("gray content");

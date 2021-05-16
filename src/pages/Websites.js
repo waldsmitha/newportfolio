@@ -3,14 +3,12 @@ import React from "react";
 //Routing
 import { Link } from "react-router-dom";
 
-//Components
-import BackgroundCircles from "../components/BackgroundCircles";
-
 //Images
 import name from "../img/name-sm-bl.svg";
 import sage from "../img/sage.svg";
 import heart from "../img/heart.svg";
 import camera from "../img/camera.svg";
+import ignite from '../img/ignite.svg'
 import left from "../img/left.svg";
 import right from "../img/right.svg";
 
@@ -86,6 +84,20 @@ const Websites = () => {
             </div>
           </a>
         </motion.div>
+        <motion.div variants={scaleDown} className="item">
+          <a
+            href="https://gifted-bardeen-3faafd.netlify.app/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <motion.img whileHover={{ y: -10 }} src={ignite} alt="" />
+            <div className="title">
+              <h1>Ignite</h1>
+              <h2>From Lesson</h2>
+              <h2>developedbyed.com</h2>
+            </div>
+          </a>
+        </motion.div>
       </motion.div>
       <div className="nav-arrows">
         <Link to="/">
@@ -116,9 +128,10 @@ const StyledContainer = styled(motion.div)`
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     justify-items: center;
     align-items: center;
+    grid-row-gap: 2rem;
   }
   .item {
     cursor: pointer;
@@ -172,7 +185,7 @@ const StyledContainer = styled(motion.div)`
     top: 0;
     left: calc(2.5vw);
     img {
-      transform: scale(0.9);
+      transform: scale(0.8);
     }
   }
 `;
