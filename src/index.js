@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { HashRouter } from "react-router-dom";
 import ReactGA from 'react-ga';
 
-const TRACKING_ID = 'UA-2622820165';
+const TRACKING_ID = 'G-FLJLTMMVE6';
 ReactGA.initialize(TRACKING_ID);
 ReactGA.pageview(window.location.pathname + window.location.search);
 
